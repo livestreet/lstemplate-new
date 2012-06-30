@@ -1,0 +1,115 @@
+/* --------------------------------------------
+	КОММЕНТАРИИ
+-------------------------------------------- */
+
+/* Блок с комментариями */
+.comments-header { margin-bottom: 20px; position: relative; }
+.comments-header h3 { font-size: 18px; font-family: Verdana, sans-serif; margin-bottom: 3px; }
+.comments-header .subscribe { position: absolute; top: 15px; right: 0; font-size: 11px; color: #7b848d; }
+.comments-header .subscribe input { top: 2px; }
+
+.comments { margin-bottom: 30px; padding-left:30px }
+
+.comment-wrapper { position: relative; }
+.comment-wrapper .comment-wrapper { padding-left: 40px; }
+
+.comment-preview { padding: 5px 10px 6px; margin-bottom: 10px; background: #fafafa; border: 1px solid #eee; border-radius: 3px; }
+.comment-preview { font-size: 13px; line-height: 18px; }
+
+
+/* Комментарий */
+.comment { min-height: 48px; margin-bottom: 10px; padding: 10px 0 0 25px; position: relative; }
+.comment .deleted { padding: 5px 10px; color: #777; background: #f4f4f4; }
+.comment .comment-avatar { position: absolute; top: 10px; left: 0; width: 30px; height: 30px; }
+.comment .folding { width: 13px; height: 13px; position: absolute; top: 23px; left: 2px; background: url(../images/icons-synio.png) 0 -94px no-repeat; cursor: pointer; }
+.comment .folding.folded { background-position: -13px -94px; }
+
+
+/* Стили для списка комментариев на странице http://ваш_сайт/comments/ */
+.comments.comment-list { padding-left:0px;  }
+.comments.comment-list .path { padding-bottom: 3px; font-size: 11px; font-weight: bold; color: #aaa; }
+.comments.comment-list .path .blog-name { color: #999; }
+.comments.comment-list .path .comments-total { color: #78C658; background: url(../images/comment-total.gif) no-repeat 0 4px; padding-left: 10px; margin-left: 10px; font-weight: normal; text-decoration: none; }
+.comments.comment-list .comment { margin-left:-25px; background:none}
+.comments.comment-list .vote { position: absolute; top: 36px; right: 0; width: 50px; height: 30px; }
+
+
+
+/* Типы комментариев
+ *
+ * deleted 	- 	удаленный комментарий
+ * self 	- 	ваш комментарий
+ * new 		- 	новый, непрочитанный комментарий
+ * current 	- 	активный комментарий, который выделяется при исползование кнопки обновления в тулбаре
+ *
+ */
+.comment 											{ background: #fff; }
+.comment.comment-deleted 	.comment-content 		{ background: #c5c5c5; border-color: #C8A8A8; }
+.comment.comment-deleted	.comment-content:after 	{ border-color: #C8A8A8 transparent transparent; }
+.comment.comment-deleted 	.comment-content:before { border-color: #c5c5c5 transparent transparent; }
+.comment.comment-self		.comment-content		{ background: #fefef1; border-color: #e6e6bd; }
+.comment.comment-self		.comment-content:after 	{ border-color: #e6e6bd transparent transparent; }
+.comment.comment-self 		.comment-content:before { border-color: #fefef1 transparent transparent; }
+.comment.comment-new 		.comment-content		{ background: #e4fbf1; border-color: #d0e8dd; }
+.comment.comment-new		.comment-content:after 	{ border-color: #d0e8dd transparent transparent; }
+.comment.comment-new 		.comment-content:before { border-color: #e4fbf1 transparent transparent; }
+.comment.comment-current 	.comment-content		{ background: #cdf5a6; border-color: #bae48e; }
+.comment.comment-current	.comment-content:after 	{ border-color: #bae48e transparent transparent; }
+.comment.comment-current 	.comment-content:before { border-color: #cdf5a6 transparent transparent; }
+.comment.comment-bad 		.comment-content		{ opacity: 0.3; filter: alpha(opacity=30); }
+.comment.comment-bad:hover 	.comment-content		{ opacity: 1; filter: alpha(opacity=100); }
+
+.ls-user-role-not-admin .comment.comment-deleted 	{ padding: 10px 15px; min-height: 0; background: #f7f7f7; color: #888; }
+
+
+/* Info Block */
+.comment .comment-info { overflow: hidden; zoom: 1; font-size: 10px; line-height: 14px; margin-bottom: 5px; position: relative; padding: 12px 0 0 31px; }
+.comment .comment-info li { float: left; margin-right: 10px; }
+.comment .comment-info li a { border:0px; font-size:11px }
+.comment .comment-info li a:hover { text-decoration:underline }
+.comment .comment-info li.avatar { padding-top: 0; position: absolute; top: 0; left: 0; }
+.comment .comment-info li.avatar img { vertical-align: top; }
+.comment .comment-info li.comment-author a { font-weight: bold; text-decoration: none; color: #333; font-size: 11px; line-height: 11px; position: absolute; top: -1px; left: 31px; }
+.comment .comment-info li.comment-date { color: #999; margin-right: 25px; }
+.comment .comment-info li a.comment-link { float: left; width: 9px; height: 11px; background: url(../images/icons.gif) -10px -230px no-repeat; position: relative; top: 3px; }
+
+.comment .comment-info li a.favourite { float: left; width: 10px; height: 8px; background: url(../images/icons.gif) -40px -40px no-repeat; position: relative; top: 4px; }
+.comment .comment-info li a.favourite.active { background-position: -50px -40px; }
+.comment .comment-info li a.favourite:hover { background-position: -50px -40px; }
+
+.comment .comment-info li .favourite-count { font-size: 10px; color: #a2b6cd; position: relative; top: -2px; }
+
+.comment .vote { position: absolute; top: 16px; right: 0; width: 50px; height: 30px; }
+.comment .vote .vote-up { position: absolute; top: 0; left: 0; }
+.comment .vote .vote-down { position: absolute; top: 16px; left: 0; }
+.comment .vote .vote-count { position: absolute; top: 4px; right: 20px; font-weight: normal; color: #333; padding: 0; }
+.comment .vote.vote-count-positive .total { color: #390; }
+.comment .vote.vote-count-negative .total { color: #f00; }
+
+.comment .comment-info li.goto-comment-child { display: none; }
+
+
+/* Content */
+.comment .comment-content { margin-bottom: 10px; margin-right:60px; border: 1px solid #e7ebed; padding: 8px 30px 9px 10px; border-radius: 7px; position: relative; }
+.comment .comment-content.text { font-size: 13px; }
+.comment .comment-content.text blockquote { background: #fff; border-color: #ccc; padding: 5px 10px; margin-bottom: 5px; }
+.comment .comment-content:after { display: block; content: ""; position: absolute; bottom: -12px; left: 10px; width: 0; height: 0; border-width: 6px; border-color: #e7ebed transparent transparent; border-style: solid; }
+.comment .comment-content:before { display: block; content: ""; position: absolute; bottom: -11px; left: 10px; width: 0; height: 0; border-width: 6px; border-color: #fff transparent transparent; border-style: solid; z-index: 10; }
+
+
+/* Actions */
+.comment .comment-actions li { display: inline; margin-right: 10px; }
+
+
+/* Форма комментирования */
+.reply-header { font-size: 20px; line-height: 1.3em; margin-bottom: 15px; padding-left:30px; }
+.reply-header h4 { border:0px; text-decoration:underline }
+
+.reply { padding:3px; border-radius: 5px; margin-left:24px }
+.reply textarea { height: 100px; margin-bottom:10px }
+.reply textarea.loader { background: #f7f7f7 url(../images/loader.gif) no-repeat center;}
+
+.reply .mceEditor { display: block; margin-bottom: 10px; }
+
+.wall-submit.wall-submit-reply.wall-submit-comment { box-shadow: none; margin-top: 0; margin-bottom: 50px; }
+.wall-submit.wall-submit-reply.wall-submit-comment:after { display: none; }
