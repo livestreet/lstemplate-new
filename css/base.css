@@ -67,7 +67,7 @@ h3 { font-size: 18px; }
 
 /* Навигация
 ---------------------------------------------------- */
-#nav { margin: 0 auto 15px; max-width: 1600px; min-width: 960px; background: url(../images/nav.png) no-repeat; position: relative; zoom: 1; }
+#nav { margin: 0 auto 15px; max-width: 1600px; min-width: 990px; background: url(../images/nav.png) no-repeat; position: relative; zoom: 1; }
 #nav-inner { height: 92px; padding: 0 0 0 0; margin-left: 20px; background: url(../images/nav.png) 100% 0 no-repeat; overflow: hidden; zoom: 1; }
 
 #nav .search { position: absolute; bottom: 15px; right: 36px; }

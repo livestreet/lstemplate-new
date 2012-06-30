@@ -565,10 +565,10 @@ function toolbarPos() {
 				$('#container').addClass('toolbar-margin');
 			}
 
-			$('#toolbar').css({'position': 'fixed', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth() - 10, 'top' : eval(document.documentElement.scrollTop) + 187, 'display': 'block'});
-        } else {
+			$('#toolbar').css({'position': 'absolute', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth() - 10, 'top' : eval(document.documentElement.scrollTop) + 136, 'display': 'block'});
+		} else {
 			$('#container').removeClass('toolbar-margin');
-			$('#toolbar').css({'position': 'fixed', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth(), 'top': 187, 'display': 'block'});
+			$('#toolbar').css({'position': 'fixed', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth() + 7, 'top': 136, 'display': 'block'});
 		}
 	}
 };

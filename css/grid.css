@@ -2,7 +2,7 @@
 	СЕТКА
 -------------------------------------------- */
 
-#container 	{ margin: 0 auto 20px; max-width: 1600px; min-width: 960px; }
+#container 	{ margin: 0 auto 20px; max-width: 1600px; min-width: 990px; }
 #header 	{ min-width: 960px; height: 80px; margin: 0 auto; max-width: 1570px; position: relative; overflow: hidden; zoom: 1; padding: 0 15px; background: #222; }
 #header-light { text-align: center; padding: 20px 0; background: #fff; width: 400px; margin: 20px auto 40px; border-radius: 5px; }
 #wrapper 	{ overflow: hidden; zoom: 1; padding: 0 20px 20px; }
