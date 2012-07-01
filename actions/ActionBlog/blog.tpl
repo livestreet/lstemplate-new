@@ -89,7 +89,7 @@
 	<div class="blog-inner">
 		<header class="blog-header">
             <img src="{$oBlog->getAvatarPath(48)}" alt="avatar" class="avatar" />
-			<span class="close" onclick="ls.blog.toggleInfo(); return false;"><a href="#" class="link-dotted">Свернуть</a><i class="icon-synio-close"></i></span>
+			<span class="close" onclick="ls.blog.toggleInfo(); return false;"><a href="#" class="link-dotted">{$aLang.blog_fold_info}</a><i class="icon-synio-close"></i></span>
 		</header>
 
 		
@@ -139,6 +139,7 @@
 			
 			
 			{if $oUserCurrent and ($oUserCurrent->getId()==$oBlog->getOwnerId() or $oUserCurrent->isAdministrator() or $oBlog->getUserIsAdministrator() )}
+            <br /><br />
 				<ul class="actions">
 					<li>
 						<a href="{router page='blog'}edit/{$oBlog->getId()}/" title="{$aLang.blog_edit}" class="edit">{$aLang.blog_edit}</a></li>

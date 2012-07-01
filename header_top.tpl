@@ -33,7 +33,7 @@
 		</div>
 	{/if}
 
-	<a href="{cfg name='path.root.web'}" class="logo">{cfg name='view.name'}</a>
+	<a href="{cfg name='path.root.web'}" class="logo">{cfg name='view.name'}</a>         
 
 	<ul class="pages">
 		<li {if $sMenuHeadItemSelect=='blog'}class="active"{/if}><a href="{cfg name='path.root.web'}">{$aLang.topic_title}</a></li>

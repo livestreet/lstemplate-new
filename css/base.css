@@ -21,6 +21,11 @@ a.link-dotted:hover { border-color: #f00; }
 a 			{ color: #70AAE0; }
 a:hover 	{ text-decoration: none; }
 
+.text a:visited { color: #1D2273; }
+
+a.link-dashed     { border-bottom: 1px dashed #5055b2; text-decoration: none; }
+a.link-dashed:hover { border-color: #f00; }
+
 /* Заголовки
 ---------------------------------------------------- */
 h2.page-header { color: #333; font-size: 27px; line-height: 1em; font-weight: normal; margin-bottom: 20px; }
@@ -42,8 +47,9 @@ h3 { font-size: 18px; }
 
 #header a { color: #fff; }
 
-#header .pages { overflow: hidden; zoom: 1; padding: 32px 0 0; list-style: none; float: left; font-size: 15px; }
+#header .pages { overflow: hidden; zoom: 1; padding: 32px 0 0; list-style: none; float: left; font-size: 15px }
 #header .pages li { float: left; margin-right: 10px; position: relative; }
+#header .pages li:last-child { margin-right:0px }
 #header .pages li a { color: #BEBEBE; text-decoration: underline; padding: 2px 5px 3px; }
 #header .pages li.active a { color: #FFFFFF; font-size: 24px; line-height: 24px; text-decoration: none; }
 #header .pages li.active { top: -5px; }
@@ -170,7 +176,7 @@ h3 { font-size: 18px; }
 	margin-top: 13px; 
 	font-size: 11px; 
 	border-radius: 3px; 
-	box-shadow: 0 0 5px #e8e8c0 inset; 
+	-webkit-box-shadow: 0 0 5px #e8e8c0 inset; box-shadow: 0 0 5px #e8e8c0 inset;
 }
 .help:before 	{ display: block; content: ""; position: absolute; top: -12px; left: 15px; width: 0; height: 0; border-width: 6px; border-color: transparent transparent #F2F2DD transparent; border-style: solid; }
 .help .help-col { float: left; width: 230px; padding: 0 10px; }
