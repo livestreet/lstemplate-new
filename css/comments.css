@@ -3,9 +3,9 @@
 -------------------------------------------- */
 
 /* Блок с комментариями */
-.comments-header { margin-bottom: 20px; position: relative; }
-.comments-header h3 { font-size: 18px; font-family: Verdana, sans-serif; margin-bottom: 3px; }
-.comments-header .subscribe { position: absolute; top: 15px; right: 0; font-size: 11px; color: #7b848d; }
+.comments-header { margin-bottom: 16px; position: relative; overflow:hidden }
+.comments-header h3 { font-size: 18px; float:left; font-family: Verdana, sans-serif; margin-bottom: 3px; }
+.comments-header .subscribe { float:left; padding:4px 0px 0px 30px; font-size: 11px; color: #7b848d; }
 .comments-header .subscribe input { top: 2px; }
 
 .comments { margin-bottom: 30px; padding-left:30px }
@@ -104,6 +104,8 @@
 /* Форма комментирования */
 .reply-header { font-size: 20px; line-height: 1.3em; margin-bottom: 15px; padding-left:30px; }
 .reply-header h4 { border:0px; text-decoration:underline }
+
+.comment-preview { margin-left:26px }
 
 .reply { padding:3px; border-radius: 5px; margin-left:24px }
 .reply textarea { height: 100px; margin-bottom:10px }

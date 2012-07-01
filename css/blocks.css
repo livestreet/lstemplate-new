@@ -3,7 +3,7 @@
 ------------------------------------------------------------------- */
 
 .block                  { padding: 15px 20px; background: #fff; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 7px; box-shadow: 0 0 5px #eee; }
-.block:last-child 		{ margin-bottom: 0; border: none; }
+.block:last-child 		{ margin-bottom: 0 }
 .sidebar-left .block 	{ margin-bottom: 10px; }
 
 .block .block-header 					{ position: relative; margin-bottom: 4px }
