@@ -54,7 +54,7 @@
 			aRouter['{$sPage}'] = '{$sPath}';
 		{/foreach}
 	</script>
-	
+
 	
 	{$aHtmlHeadFiles.js}
 
