@@ -5,7 +5,7 @@
 	iMaxIdComment=$iMaxIdComment
 }
 
-
+{hook run='comment_tree_begin' iTargetId=$iTargetId sTargetType=$sTargetType}
 {*
 {if $oUserCurrent}
 <script type="text/javascript">
@@ -84,6 +84,7 @@
 	
 {include file='comment_paging.tpl' aPagingCmt=$aPagingCmt}
 
+{hook run='comment_tree_end' iTargetId=$iTargetId sTargetType=$sTargetType}
 
 {if $bAllowNewComment}
 	{$sNoticeNotAllow}

@@ -43,7 +43,7 @@
 		var LIVESTREET_SECURITY_KEY = '{$LIVESTREET_SECURITY_KEY}';
 		var SESSION_ID				= '{$_sPhpSessionId}';
 		var BLOG_USE_TINYMCE		= '{cfg name="view.tinymce"}';
-		
+
 		var TINYMCE_LANG = 'en';
 		{if $oConfig->GetValue('lang.current') == 'russian'}
 			TINYMCE_LANG = 'ru';
@@ -58,11 +58,12 @@
 	
 	{$aHtmlHeadFiles.js}
 
-	
+
 	<script type="text/javascript">
 		var tinyMCE = false;
 		ls.lang.load({json var = $aLangJs});
-		ls.registry.set('comment_max_tree','{cfg name="module.comment.max_tree"}');
+        ls.registry.set('comment_max_tree',{json var=$oConfig->Get('module.comment.max_tree')});
+        ls.registry.set('block_stream_show_tip',{json var=$oConfig->Get('block.stream.show_tip')});
 	</script>
 	
 	
@@ -88,7 +89,7 @@
 {add_block group='toolbar' name='toolbar_admin.tpl' priority=100}
 {add_block group='toolbar' name='toolbar_scrollup.tpl' priority=-100}
 
-<body class="{$body_classes}">
+<body class="{$body_classes} width-{cfg name='view.grid.type'}">
 	{hook run='body_begin'}
 
 	{if $oUserCurrent}

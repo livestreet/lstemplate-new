@@ -105,7 +105,7 @@
 .reply-header { font-size: 20px; line-height: 1.3em; margin-bottom: 15px; padding-left:30px; }
 .reply-header h4 { border:0px; text-decoration:underline }
 
-.comment-preview { margin-left:26px }
+.comment-preview { padding: 5px 10px 6px; margin-bottom: 10px; background: #fafafa; border: 1px solid #eee; border-radius: 3px; font-size: 13px; line-height: 1.6em; }
 
 .reply { padding:3px; border-radius: 5px; margin-left:24px }
 .reply textarea { height: 100px; margin-bottom:10px }

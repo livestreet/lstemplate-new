@@ -34,6 +34,9 @@
 			<div class="arrow"></div>
 		</div>
 
+    	{if $oVote || ($oUserCurrent && $oTopic->getUserId() == $oUserCurrent->getId()) || strtotime($oTopic->getDateAdd()) < $smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}
+    		{assign var="bVoteInfoShow" value=true}
+    	{/if}
 
 		<ul class="info">
     		<li id="vote_area_topic_{$oTopic->getId()}" class="vote
@@ -71,15 +74,17 @@
 
                                                                     {if strtotime($oTopic->getDateAdd()) > $smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}       
                                                                         vote-not-expired
-                                                                    {/if}">
-            {if $oVote || ($oUserCurrent && $oTopic->getUserId() == $oUserCurrent->getId()) || strtotime($oTopic->getDateAdd()) < $smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}
-				{assign var="bVoteInfoShow" value=true}
-			{/if}
+                                                                    {/if}
+                                                                    {if $bVoteInfoShow}js-infobox-vote-topic{/if}">
 
     			<a href="#" class="vote-up" onclick="return ls.vote.vote({$oTopic->getId()},this,1,'topic');"></a>
-    			<span id="vote_total_topic_{$oTopic->getId()}" class="vote-count {if $bVoteInfoShow}js-infobox-vote-topic{/if}">
-					{if $oTopic->getRating() > 0}+{/if}{$oTopic->getRating()}
-				</span>
+    				<span class="vote-count" id="vote_total_topic_{$oTopic->getId()}">
+							{if $bVoteInfoShow}
+								{if $oTopic->getRating() > 0}+{/if}{$oTopic->getRating()}
+							{else}
+								<i onclick="return ls.vote.vote({$oTopic->getId()},this,0,'topic');"></i>
+							{/if}
+						</span>
     			<a href="#" class="vote-down" onclick="return ls.vote.vote({$oTopic->getId()},this,-1,'topic');"></a>
 
                 {if $bVoteInfoShow}
@@ -96,7 +101,7 @@
 
 			<li class="date">
 				<time datetime="{date_format date=$oTopic->getDateAdd() format='c'}" title="{date_format date=$oTopic->getDateAdd() format='j F Y, H:i'}">
-					{date_format date=$oTopic->getDateAdd() format="j F Y, H:i"}
+					{date_format date=$oTopic->getDateAdd() hours_back="12" minutes_back="60" now="60" day="day H:i" format="j F Y, H:i"}
 				</time>
 			</li>
 			<li class="username">
