@@ -1,32 +1,14 @@
 {include file='header.tpl' menu='people'}
 
 <table class="table table-users">
-	{if $bUsersUseOrder}
-		<thead>
-			<tr>
-				<th class="cell-name cell-tab">
-					<div class="cell-tab-inner {if $sUsersOrder=='user_login'}active{/if}"><a href="{$sUsersRootPage}?order=user_login&order_way={if $sUsersOrder=='user_login'}{$sUsersOrderWayNext}{else}{$sUsersOrderWay}{/if}" {if $sUsersOrder=='user_login'}class="{$sUsersOrderWay}"{/if}><span>{$aLang.user}</span></a></div>
-				</th>
-				<th>&nbsp;</th>
-				<th class="cell-skill cell-tab">
-					<div class="cell-tab-inner {if $sUsersOrder=='user_skill'}active{/if}"><a href="{$sUsersRootPage}?order=user_skill&order_way={if $sUsersOrder=='user_skill'}{$sUsersOrderWayNext}{else}{$sUsersOrderWay}{/if}" {if $sUsersOrder=='user_skill'}class="{$sUsersOrderWay}"{/if}><span>{$aLang.user_skill}</span></a></div>
-				</th>
-				<th class="cell-rating cell-tab">
-					<div class="cell-tab-inner {if $sUsersOrder=='user_rating'}active{/if}"><a href="{$sUsersRootPage}?order=user_rating&order_way={if $sUsersOrder=='user_rating'}{$sUsersOrderWayNext}{else}{$sUsersOrderWay}{/if}" {if $sUsersOrder=='user_rating'}class="{$sUsersOrderWay}"{/if}><span>{$aLang.user_rating}</span></a></div>
-				</th>
-			</tr>
-		</thead>
-	{else}
-		<thead>
-			<tr>
-				<th class="cell-name cell-tab"><div class="cell-tab-inner">{$aLang.user}</div></th>
-				<th>&nbsp;</th>
-				<th class="cell-skill cell-tab"><div class="cell-tab-inner">{$aLang.user_skill}</div></th>
-                <th class="cell-date cell-tab"><div class="cell-tab-inner active"><span>{$aLang.user_date_last}</span></div></th>
-				<th class="cell-rating cell-tab">{$aLang.user_rating}</th>
-			</tr>
-		</thead>
-	{/if}
+	<thead>
+	<tr>
+		<th class="cell-name cell-tab"><div class="cell-tab-inner">{$aLang.user}</div></th>
+		<th>&nbsp;</th>
+		<th class="cell-date cell-tab"><div class="cell-tab-inner active"><span>{$aLang.user_date_last}</span></div></th>
+		<th class="cell-rating cell-tab">{$aLang.user_rating}</th>
+	</tr>
+	</thead>
 
 	<tbody>
 		{if $aUsersLast}
@@ -44,7 +26,7 @@
 					<td>
 						{if $oUserCurrent}
                             {if $oUserNote}
-                                <button type="button" class="button button-action button-action-note js-infobox" title="{$oUserNote->getText()|escape:'html'}"><i class="icon-synio-comments-green"></i></button> 
+                                <button type="button" class="button button-action button-action-note js-infobox" title="{$oUserNote->getText()|escape:'html'}"><i class="icon-synio-comments-green"></i></button>
                             {/if}
 							<a href="{router page='talk'}add/?talk_users={$oUserList->getLogin()}"><button type="submit"  class="button button-action button-action-send-message"><i class="icon-synio-send-message"></i><span>{$aLang.user_write_prvmsg}</span></button></a>
 						{/if}
