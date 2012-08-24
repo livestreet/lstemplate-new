@@ -6,6 +6,7 @@
 		<th class="cell-name cell-tab"><div class="cell-tab-inner">{$aLang.user}</div></th>
 		<th>&nbsp;</th>
 		<th class="cell-date cell-tab"><div class="cell-tab-inner active"><span>{$aLang.user_date_last}</span></div></th>
+		<th class="cell-skill cell-tab"><div class="cell-tab-inner">{$aLang.user_skill}</div></th>
 		<th class="cell-rating cell-tab">{$aLang.user_rating}</th>
 	</tr>
 	</thead>
