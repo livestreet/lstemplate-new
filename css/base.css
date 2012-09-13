@@ -78,7 +78,7 @@ h3 { font-size: 18px; }
 
 #nav .search { position: absolute; bottom: 15px; right: 36px; }
 #nav .search .text { width: 165px; border: 1px solid #ccc; border-radius: 13px; padding: 4px 35px 4px 13px; color: #777; box-shadow: 0 2px 2px #eee inset; }
-#nav .search .search-submit { width: 18px; height: 18px; position: absolute; top:7px; right: -4px; *top: 5px; border: none; background: url(../images/search.png) no-repeat; cursor: pointer; }
+#nav .search .search-submit { width: 18px; height: 18px; position: absolute; top:7px; right: 10px; *top: 5px; border: none; background: url(../images/search.png) no-repeat; cursor: pointer; }
 
 #nav .button-publish { float: left; text-decoration: none; background: url(../images/button_publish.gif) no-repeat; color: #333; margin-top: 45px; margin-right: 35px; }
 #nav .button-publish span { float: left; background: url(../images/button_publish.gif) 100% 0 no-repeat; margin-left: 25px; padding: 2px 25px 3px 0; cursor: pointer; }

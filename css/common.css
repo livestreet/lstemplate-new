@@ -56,7 +56,7 @@
 .actions a:hover { text-decoration: underline; }
 
 /* Switcher */
-.nav-pills { overflow: hidden; zoom: 1; margin-bottom: 15px; font-size: 11px; padding-bottom: 3px; }
+.nav-pills { overflow: hidden; zoom: 1; margin-bottom: 15px; font-size: 11px; padding-bottom: 3px; position:relative; }
 .nav-pills li { float: left; padding: 1px 7px 1px; color: #A2A2A2; background: #fff; position: relative; line-height: 15px; cursor: pointer; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
 .nav-pills li a { color: #A2A2A2; text-decoration: none; }
 .nav-pills li:first-child { -moz-border-radius-topleft: 5px; -moz-border-radius-bottomleft: 5px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-left: 1px solid #ddd; }
@@ -66,6 +66,19 @@
 .nav-pills li.active { color: #fff; background: #83DC5F; border-color: #83DC5F; box-shadow: 0 1px 0 #75C656 inset; }
 .nav-pills li.active a { color: #fff; }
 .nav-pills li.active:before { content: ""; position: absolute; bottom: -4px; left: 8px; width: 5px; height: 3px; background: url(../images/arrows.png) -9px 0 no-repeat; }
+
+.nav-pills li.dropdown 			{ position: relative; }
+.nav-pills li.dropdown a 		{ padding-right: 12px; }
+.nav-pills li.dropdown i 		{ position: absolute; top: 4px; right: 3px; cursor: pointer; }
+.nav-pills li.dropdown ul 		{ display: none; position: absolute; }
+.nav-pills li.dropdown.opened a {   }
+
+.dropdown-menu 						{ display: none; padding: 10px 15px 13px; border-radius: 5px; -webkit-box-shadow: 0 0 4px rgba(0,0,0,.5); box-shadow: 0 0 4px rgba(0,0,0,.5); position: absolute; top: 28px; overflow: hidden; z-index: 10; background: #fff; min-width: 150px; }
+.dropdown-menu li 					{ line-height: 1em; margin-bottom: 15px; }
+.dropdown-menu li:last-child 		{ margin-bottom: 0; }
+.dropdown-menu li a 				{ display: block; }
+.dropdown-menu li a:hover 			{  }
+.dropdown-menu li.active a 			{ color: #339900 }
 
 /* Toolbar 
 ---------------------------------------------------- */
@@ -218,7 +231,7 @@
 .loader { background: #fafafa url(../images/loader.gif) 50% 50% no-repeat; }
 
 .user, .ls-user 	{ font-weight: bold; color: #333; }
-.user:before, .ls-user:before   { content: ''; display: inline-block; width: 14px; height: 14px; margin-right: 3px; background: url(../images/icons.png) -168px 0 no-repeat; vertical-align: middle; }
+
 .user .icon-user 	{ margin-right: 3px; }
 .username.inactive,
 .user.inactive           { color: #aaa !important; }

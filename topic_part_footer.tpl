@@ -82,7 +82,7 @@
 							{if $bVoteInfoShow}
 								{if $oTopic->getRating() > 0}+{/if}{$oTopic->getRating()}
 							{else}
-								<i onclick="return ls.vote.vote({$oTopic->getId()},this,0,'topic');"></i>
+								<i onclick="return ls.vote.vote({$oTopic->getId()},this,0,'topic');">&mdash;</i>
 							{/if}
 						</span>
     			<a href="#" class="vote-down" onclick="return ls.vote.vote({$oTopic->getId()},this,-1,'topic');"></a>

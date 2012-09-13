@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
 	$('#foto-resize').jqm({modal: true});
 	$('#avatar-resize').jqm({modal: true});
 	$('#userfield_form').jqm({toTop: true});
-    $('#photoset-upload-form').jqm({trigger: '#photoset-start-upload'});
+	$('#photoset-upload-form').jqm({trigger: '#photoset-start-upload'});
 
 	$('.js-registration-form-show').click(function(){
 		if (ls.blocks.switchTab('registration','popup-login')) {
@@ -99,6 +99,12 @@ jQuery(document).ready(function($){
 		toolbarPos();
 	});
 
+	$(window).scroll(function(){
+		if ($(document).width() <= 1100) {
+			toolbarPos();
+		}
+	});
+
 
 	// Всплывающие сообщения
 	if (ls.registry.get('block_stream_show_tip')) {
@@ -112,6 +118,18 @@ jQuery(document).ready(function($){
 			showTimeout: 1000
 		});
 	}
+	$('.js-title-talk').poshytip({
+		className: 'infobox-yellow',
+		alignTo: 'target',
+		alignX: 'left',
+		alignY: 'center',
+		offsetX: 10,
+		liveEvents: true,
+		showTimeout: 1000
+	});
+
+
+	$('.js-infobox-vote-topic').poshytip({
 		content: function() {
 			var id = $(this).attr('id').replace('vote_area_topic_','vote-info-topic-');
 			return $('#'+id).html();
@@ -346,13 +364,6 @@ jQuery(document).ready(function($){
 	});
 
 
-	$(window).scroll(function(){
-		if ($(document).width() <= 1100) {
-			$('#toolbar').css({'top' : eval(document.documentElement.scrollTop) + 136});
-		}
-	});
-
-
 	$('.topic').each(function(i){
 		var share=$(this).find('.topic-info-share');
 		if (share.length) {
@@ -375,6 +386,40 @@ jQuery(document).ready(function($){
 				$(this).attr('src',ifr_source+'?'+wmode);
 		}
 	});
+
+	// Меню
+	(function(){
+		var trigger = $('#dropdown-mainmenu-trigger');
+
+		if (!trigger.length) {
+			return;
+		}
+
+		var menu 	= $('#dropdown-mainmenu-menu');
+		menu.appendTo('body').css('display', 'none');
+
+		trigger.click(function(){
+			var pos = trigger.offset();
+			menu.css({ 'left': pos.left, 'top': pos.top + trigger.height() + 10, 'min-width': trigger.outerWidth() });
+			menu.slideToggle();
+			trigger.toggleClass('opened');
+			return false;
+		});
+
+		// Hide menu
+		$(document).click(function(){
+			trigger.removeClass('opened');
+			menu.slideUp();
+		});
+
+		$('body').on('click', '#dropdown-mainmenu-trigger, #dropdown-mainmenu-menu', function(e) {
+			e.stopPropagation();
+		});
+
+		$(window).resize(function(){
+			menu.css({ 'left': $('#dropdown-mainmenu-trigger').offset().left });
+		});
+	})();
 
 	// Меню пользователя в шапке
 	(function(){
@@ -476,17 +521,56 @@ jQuery(document).ready(function($){
 	ls.hook.run('ls_template_init_end',[],window);
 });
 
+
 function toolbarPos() {
+	var $=jQuery;
 	if ($('#toolbar section').length) {
-		if ($(document).width() <= 1600) {
+		if ($(document).width() <= 1100) {
 			if (!$('#container').hasClass('no-resize')) {
 				$('#container').addClass('toolbar-margin');
 			}
-
-			$('#toolbar').css({'position': 'absolute', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth() - 10, 'top' : eval(document.documentElement.scrollTop) + 136, 'display': 'block'});
+			$('#toolbar').css({'position': 'fixed', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth() - 10, 'top' : $(document).scrollTop() + 136, 'display': 'block'});
 		} else {
 			$('#container').removeClass('toolbar-margin');
-			$('#toolbar').css({'position': 'fixed', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth() + 7, 'top': 136, 'display': 'block'});
+			$('#toolbar').css({'position': 'fixed', 'left': $('#wrapper').offset().left + $('#wrapper').outerWidth() + 2, 'top': 136, 'display': 'block'});
 		}
 	}
 };
+
+
+// Группировка не влезающих пунктов в главном меню
+jQuery(window).load(function () {
+	navMainGroup();
+});
+
+jQuery(window).resize(function () {
+	navMainGroup();
+});
+
+function navMainGroup() {
+	var $ 			  = jQuery;
+	var more_li       = $('#nav-main li.nav-main-more');
+	var li            = $('#nav-main li:not(.nav-main-more)');
+	var width_lis     = 0;
+	var vis_count     = 0;
+	var is_outofbox   = false;
+
+	$('#dropdown-mainmenu-menu').hide();
+
+	li.each(function(i){
+		if (!is_outofbox && $(this).offset().top < 10) {
+			width_lis += $(this).outerWidth(true);
+			vis_count++;
+		} else {
+			is_outofbox = true;
+			$(this).appendTo('#dropdown-mainmenu-menu');
+		}
+	});
+
+	if ($('#dropdown-mainmenu-menu li').length > 0) {
+		if ($('#nav-main').width() - width_lis < more_li.width()) {
+			$( li[vis_count - 1] ).prependTo('#dropdown-mainmenu-menu');
+		}
+		more_li.show();
+	}
+}

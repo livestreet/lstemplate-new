@@ -4,7 +4,7 @@
 
 .profile 				{ min-height: 48px; margin-bottom: 0; padding: 0 0px 20px 0; position: relative; }
 
-.profile .button 		{ float: right; margin-left: 7px; }
+.profile .button 		{ float: right; margin:16px 40px 0 0 }
 .profile .avatar 		{ position: absolute; top: 0;  }
 .profile .text	{ font-size: 10px; color: #aaa; text-align: center; }
 

@@ -27,12 +27,16 @@
 .topic .tags li { display: inline; color: #777; }
 .topic .tags li a { color: #777; text-decoration: none; }
 .topic .tags li a:hover { color: #fff; background: #777; }
+.topic .tags li.topic-tags-user a { color: #339900 }
+.topic .tags li.topic-tags-user a:hover { background: #339900; color:#fff }
 
 /* Info */
 .topic .info { overflow: hidden; zoom: 1; padding: 9px 0 0; font-size: 13px; background: url(../images/info_bg.png) repeat-x; }
 .topic .info li { float: left; margin-right: 15px; line-height:23px }
 .topic .info li a { text-decoration: none; }
 
+.topic .info li.vote { overflow: visible !important }
+.topic .info li.vote .vote-count { padding: 0 7px 0 5px !important }
 .topic .info li.date { color: #999; font-size: 11px; }
 .topic .info li.username a { font-weight: bold; background: url(../images/icons.gif) no-repeat 0 -106px; padding-left: 13px; }
 .topic .info li.username a:hover { text-decoration: underline; }
