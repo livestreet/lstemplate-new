@@ -21,4 +21,7 @@ return array(
 	
 	'profile_about_empty' => 'Empty...',
 	'profile_about_edit' => 'Edit',
+
+	'topic_menu_add_topics' => 'New add',
+	'topic_menu_add_blog' => 'Blog',
 );

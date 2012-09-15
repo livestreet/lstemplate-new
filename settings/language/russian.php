@@ -21,5 +21,6 @@ return array(
 	'profile_about_empty' => 'Пока ничего не известно...',
 	'profile_about_edit' => 'Редактировать',
 
-	'topic_menu_add_topics' => 'Топик',
+	'topic_menu_add_topics' => 'Новый',
+	'topic_menu_add_blog' => 'Блог',
 );
